@@ -34,8 +34,8 @@ jobs:
     - name: Executa os testes unitários
       run: mvn -B verify
 
-    - name: Gera JaCoCo coverage report
-      run: mvn jacoco:prepare-agent verify
+    # - name: Gera JaCoCo coverage report
+    #   run: mvn jacoco:prepare-agent verify
       
     - name: SonarCloud
       env:
