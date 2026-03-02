@@ -40,4 +40,4 @@ jobs:
     - name: SonarCloud
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      run: mvn org.sonarsource.scanner.maven:sonar -Dsonar.projectKey=Erik-SJ_alura-vollmed-api
+      run: mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Erik-SJ_alura-vollmed-api
