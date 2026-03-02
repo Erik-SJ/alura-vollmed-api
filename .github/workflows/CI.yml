@@ -30,11 +30,13 @@ jobs:
         
     - name: Roda o Docker Compose
       run: docker-compose up -d
-      
+
     - name: Executa os testes unitários
       run: mvn -B verify
 
+    - name: Gera JaCoCo coverage report
+      run: mvn jacoco:report
     - name: SonarCloud
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Erik-SJ_alura-vollmed-api
+      run: mvn sonar:sonar -Dsonar.projectKey=Erik-SJ_alura-vollmed-api
